@@ -37,7 +37,7 @@ pipeline {
                     sh 'docker stop studentproject || true && docker rm studentproject || true'
 
                     // Run the new container
-                    sh 'docker run -d --name studentproject -p 8000:8000 $DOCKER_IMAGE'
+                    sh 'docker run -d --name studentproject -p 5050:8000 $DOCKER_IMAGE'
                 }
             }
         }
