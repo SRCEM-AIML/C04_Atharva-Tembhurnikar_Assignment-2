@@ -90,6 +90,9 @@ This project is configured for **Continuous Integration and Deployment** using *
 
 3. **Run the Pipeline** to **build, test, and deploy** the application.
 
+ ![image](https://github.com/user-attachments/assets/5c1e3b77-2043-4e74-88cf-283a2e951062)
+
+
 ---
 
 💡 **Contributions & Feedback**  
