@@ -59,14 +59,6 @@ python manage.py runserver
 
 ---
 
-## 🖥 Usage
-- **Admin Panel** → [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
-- **Student Dashboard** → Manage courses, view academic progress
-- **Teacher Panel** → Manage students, update curriculum
-- **API Endpoints** → [http://127.0.0.1:8000/api](http://127.0.0.1:8000/api)
-
----
-
 ## 🐳 Docker Integration
 
 To run the project using **Docker**:
