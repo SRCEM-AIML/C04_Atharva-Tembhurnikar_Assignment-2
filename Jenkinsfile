@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/yourusername/yourrepo.git'
+                git branch: 'main', url: 'https://github.com/SRCEM-AIML/C04_Atharva-Tembhurnikar_Assignment-2.git'
             }
         }
 
@@ -22,8 +22,10 @@ pipeline {
 
         stage('Push to Docker Hub') {
             steps {
-                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
-                    sh 'docker push $DOCKER_IMAGE'
+                script {
+                    withDockerRegistry([credentialsId: 'dockerhub-credentials', url: 'https://index.docker.io/v1/']) {
+                        sh 'docker push $DOCKER_IMAGE'
+                    }
                 }
             }
         }
@@ -35,7 +37,7 @@ pipeline {
                     sh 'docker stop studentproject || true && docker rm studentproject || true'
 
                     // Run the new container
-                    sh 'docker run -d --name studentproject -p 8001:8001 $DOCKER_IMAGE'
+                    sh 'docker run -d --name studentproject -p 8000:8000 $DOCKER_IMAGE'
                 }
             }
         }
