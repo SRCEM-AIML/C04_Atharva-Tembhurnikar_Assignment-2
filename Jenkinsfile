@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/yourusername/yourrepo.git'
+                git 'https://github.com/SRCEM-AIML/C04_Atharva-Tembhurnikar_Assignment2.git'
             }
         }
         stage('Build Docker Image') {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Push to Docker Hub') {
             steps {
-                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
+                withDockerRegistry([credentialsId: 'dockerhub-credentials', url: '']) {
                     sh 'docker push $DOCKER_IMAGE'
                 }
             }
